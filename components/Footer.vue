@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-    <div class="max-w-screen h-[25%] bg-wave relative overflow-hidden">
+    <div class="w-full h-[30vh]  relative overflow-hidden">
       <div class="ocean">
   <div class="wave"></div>
   <div class="wave"></div>
@@ -17,9 +17,7 @@
     
 </div>
 </template>
-<style>
-
-
+<style scoped>
 
 .ocean { 
   height: 5%;
@@ -28,6 +26,7 @@
   bottom:0;
   left:0;
   background: #015871;
+  
 }
 
 .wave {

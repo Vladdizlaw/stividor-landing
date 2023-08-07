@@ -6,5 +6,8 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+  css: [
+    "/layouts/global.css",
+]
 })
