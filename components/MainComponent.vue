@@ -34,8 +34,8 @@ const img = Object.values(import.meta.glob('~/assets/image/*', {
 const items ={text,img,period}
 </script>
 <template>
-    <div ref="main" class="min-h-[250vh]  w-full justify-center items-center h-full flex py-[5rem] flex-col relative">
-        <div class="video-bg shadow-xl max-w-[100%] min-h-[200vh]">
+    <div ref="main" class="min-h-[250vh] md:min-h-[60vh] w-full justify-center items-center h-full flex py-[5rem] flex-col relative">
+        <div class="video-bg shadow-xl max-w-[100%] ">
             <video width="auto" height="800" preload="auto" src="~assets/video-1.mp4" type="video/mp4" autoplay muted
                 loop></video>
             <div class="effects"></div>
@@ -93,20 +93,6 @@ const items ={text,img,period}
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.video-bg__content {
-    z-index: 2;
-    color: #ffffff;
-    font-size: 1.7rem;
-    padding: 1rem;
-    height: 100%;
-    text-align: left;
-    transition: 0.3s;
-    opacity: 0;
-    cursor: pointer;
-}
 
-.video-bg__content:hover {
-    opacity: 0.9;
 
-}
 </style>
