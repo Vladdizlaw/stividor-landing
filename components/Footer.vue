@@ -1,65 +1,62 @@
 <script setup>
 </script>
 <template>
-    <div class="w-full h-[30vh]  relative overflow-hidden">
-      <div class="ocean">
-  <div class="wave"></div>
-  <div class="wave"></div>
-</div>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg">
-            <path fill="#000b76" fill-opacity="1.3"
-                d="M0,192L26.7,170.7C53.3,149,107,107,160,112C213.3,117,267,171,320,208C373.3,245,427,267,480,250.7C533.3,235,587,181,640,165.3C693.3,149,747,171,800,186.7C853.3,203,907,213,960,224C1013.3,235,1067,245,1120,229.3C1173.3,213,1227,171,1280,138.7C1333.3,107,1387,85,1413,74.7L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-                class="path"></path>
-        </svg> -->
-        
-        <!-- <div class="ball"></div> -->
-    
-    
-</div>
+  <div class="w-full h-fit p-4  relative overflow-hidden footer">
+   
+    <div class="w-full z-[100] flex text-black  shadow_xl flex md:justify-between flex-col md:flex-row items-center ">
+      <div class="flex w-full text-[max(2vw,1.5rem)] gap-2 items-center  justify-center">
+        <svg class="flex" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="48">
+          <path
+            d="M795-120q-122 0-242.5-60T336-336q-96-96-156-216.5T120-795q0-19.286 12.857-32.143T165-840h140q13.611 0 24.306 9.5Q340-821 343-805l27 126q2 14-.5 25.5T359-634L259-533q56 93 125.5 162T542-254l95-98q10-11 23-15.5t26-1.5l119 26q15.312 3.375 25.156 15.188Q840-316 840-300v135q0 19.286-12.857 32.143T795-120ZM229-588l81-82-23-110H180q0 39 12 85.5T229-588Zm369 363q41 19 89 31t93 14v-107l-103-21-79 83ZM229-588Zm369 363Z" />
+        </svg>
+        <p>+7 988 669 68 17</p>
+      </div>
+
+      <div class="flex flex-row w-full text-[max(2vw,1.5rem)] gap-2 items-center justify-center">
+        <svg class="flex mt-2" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="48">
+          <path
+            d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140-685v465h680v-465L480-462Zm0-60 336-218H145l335 218ZM140-685v-55 520-465Z" />
+        </svg>
+        <p>info@blackseasc.ru</p>
+      </div>
+
+      <div class="flex w-full text-[max(2vw,1.3rem)] gap-2 items-center justify-center md:leading-[100%] ">
+        <svg class="md:flex hidden" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="48">
+          <path
+            d="M697-623h60v-60h-60v60Zm0 171h60v-60h-60v60Zm0 170h60v-60h-60v60Zm-56 162v-60h219v-600H465v112l-60-42v-130h515v720H641Zm-601 0v-390l271-194 270 194v390H364v-201H258v201H40Zm60-60h98v-201h226v201h97v-299L311-630 100-478.578V-180Zm541-365ZM424-180v-201H198v201-201h226v201Z" />
+        </svg>
+        <p>Краснодар, ул.Одесская, 41 офис. 308</p>
+      </div>
+    </div>
+
+  </div>
 </template>
 <style scoped>
-
-.ocean { 
+@font-face {
+    font-family: Oswald;
+    src: local(Oswald),
+     url("/assets/Oswald-Bold.ttf") format("truetype");
+}
+.shadow_xl{
+  font-family: Oswald;
+  filter: drop-shadow(-5px 6px 5px #db8310);
+}
+.ocean {
   height: 5%;
-  width:100%;
-  position:absolute;
-  bottom:0;
-  left:0;
-  background: #015871;
-  
-}
-
-.wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  width: 100%;
   position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 12s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
+  bottom: 0;
+  left: 0;
+  background: #015871;
+
+}
+.footer{
+	background: rgba( 60, 170, 182, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8.5px );
+-webkit-backdrop-filter: blur( 8.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.wave:nth-of-type(2) {
-  top: -175px;
-  animation: wave 12s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-  opacity: 1;
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
-
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0,-25px,0);
-  }
-  50% {
-    transform: translate3d(0,5px,0);
-  }
-}
 </style>

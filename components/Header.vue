@@ -1,18 +1,18 @@
 <script setup>
 </script>
 <template>
-    <div class="w-full flex items-center justify-center flex-row gap-4 p-[1rem] h-fit relative overflow-hidden max-h-[25vh]">
+    <div class="w-full flex items-center justify-center flex-row gap-6 p-[1rem] h-fit relative overflow-hidden max-h-[25vh]  header">
        
         <!-- <div class="ocean1 z-[-1]">
   <div class="wave"></div>
   <div class="wave"></div>
 </div> -->
        
-        <div class="h-full text-white z-[10] w-[10rem]">
+        <div class="h-full  z-[10] w-[8rem] title">
             <img src="~assets/logo.svg" alt="">
         
         </div>
-        <div class=" w-full h-full">
+        <div class=" w-fit h-full">
 
             <h1 class="title  text-[#ce8421] drop-shadow-xl">
                ЧЕРНОМОРСКАЯ СТИВИДОРНАЯ КОМПАНИЯ 
@@ -29,14 +29,25 @@
     src: local(Finlandica),
      url("/assets/Finlandica-Bold.ttf") format("truetype");
 }
-
+.header{
+	background: rgba( 60, 170, 182, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8.5px );
+-webkit-backdrop-filter: blur( 8.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
 .title{
 	font-family: Finlandica;
 	font-weight: 700;
-	font-size:3vw;
+	font-size:max(3vw,1.8rem);
+	filter: drop-shadow(-5px 6px 5px #000);
+	line-height: 100%;
+	
 }
 .title_sm{
-	font-size:2vw;
+	font-size:max(2vw,1rem);
+	filter: drop-shadow(-5px 6px 5px #000);
 }
 .ocean1 { 
   height: 5%;
