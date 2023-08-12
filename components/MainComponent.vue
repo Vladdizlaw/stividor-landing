@@ -34,7 +34,7 @@ const img = Object.values(import.meta.glob('~/assets/image/*', {
 const items ={text,img,period}
 </script>
 <template>
-    <div ref="main" class="min-h-[250vh] md:min-h-[60vh] w-full justify-center items-center h-full flex py-[5rem] flex-col relative">
+    <div ref="main" class="min-h-full md:min-h-[60vh] w-full justify-center items-center h-full flex py-[5rem] flex-col relative">
         <div class="video-bg shadow-xl max-w-[100%] ">
             <video width="auto" height="800" preload="auto" src="~assets/video-1.mp4" type="video/mp4" autoplay muted
                 loop></video>
