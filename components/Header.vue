@@ -6,7 +6,7 @@ const handleClick = (linkName) => {
 </script>
 <template>
   <div
-    class="w-full flex flex-col items-center justify-center flex-row gap-6 p-[1rem] min-h-[max(22vh,10rem)] h-fit relative overflow-hidden   header select-none shrink-0">
+    class="w-full flex flex-col items-center justify-center flex-row gap-6 p-[1rem] min-h-[max(22vh,10rem)] h-fit relative overflow-hidden   header select-none shrink-0 z-10">
 
     <div class="w-full flex items-center justify-center flex-row gap-6  ">
       <div class="h-full  z-[10] w-[max(5.5vw,8rem)] title">
