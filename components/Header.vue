@@ -1,11 +1,12 @@
 <script setup>
+const emit = defineEmits(['card-select'])
 const handleClick = (linkName) => {
-
+  emit('card-select', linkName)
 }
 </script>
 <template>
   <div
-    class="w-full flex flex-col items-center justify-center flex-row gap-6 p-[1rem] h-[max(22vh,10rem)]  relative overflow-hidden   header select-none shrink-0">
+    class="w-full flex flex-col items-center justify-center flex-row gap-6 p-[1rem] min-h-[max(22vh,10rem)] h-fit relative overflow-hidden   header select-none shrink-0">
 
     <div class="w-full flex items-center justify-center flex-row gap-6  ">
       <div class="h-full  z-[10] w-[max(5.5vw,8rem)] title">
@@ -23,10 +24,10 @@ const handleClick = (linkName) => {
       </div>
     </div>
     <div class="w-full  md:justify-center md:gap-20  justify-around sm:gap-6 text-[#ce8421] flex ">
-      <p @click="handleClick('1')" class="cursor-pointer title_sm_sm">Услуги</p>
-      <p @click="handleClick('2')" class="cursor-pointer title_sm_sm">Наши клиенты</p>
-      <p @click="handleClick('3')" class="cursor-pointer title_sm_sm">Наши возможности</p>
-      <p @click="handleClick('4')" class="cursor-pointer title_sm_sm">Логистика</p>
+      <p @click="handleClick(0)" class="cursor-pointer title_sm_sm">Услуги</p>
+      <p @click="handleClick(1)" class="cursor-pointer title_sm_sm">Наши клиенты</p>
+      <p @click="handleClick(2)" class="cursor-pointer title_sm_sm">Наши возможности</p>
+      <p @click="handleClick(3)" class="cursor-pointer title_sm_sm">Логистика</p>
       <p></p>
     </div>
   </div>
@@ -57,7 +58,7 @@ const handleClick = (linkName) => {
 }
 
 .title_sm {
-  font-size: max(2vw, 1rem);
+  font-size: max(2vw, 1.3rem);
   filter: drop-shadow(-5px 6px 5px #000);
 }
 
