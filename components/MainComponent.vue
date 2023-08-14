@@ -13,7 +13,7 @@ const img = Object.values(import.meta.glob('~/assets/image/*', {
 
 </script>
 <template>
-    <div ref="main" class="h-full min-h-[60vh] max-h-full w-full justify-center items-center  flex py-[5rem] flex-col relative w-screen p-4">
+    <div ref="main" class="h-full md:min-h-[60vh] min-h-[65vh]  max-h-full w-full justify-center items-center  flex md:py-[5rem] py-[2rem] flex-col relative w-screen p-4">
         <div class="video-bg shadow-xl max-w-[100%] ">
             <video width="auto" height="800" preload="auto" src="~assets/video-1.mp4" type="video/mp4" autoplay muted
                 loop></video>

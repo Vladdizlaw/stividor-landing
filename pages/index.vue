@@ -11,7 +11,7 @@ const onCardSelect =(index) => {
 }
 </script>
 <template>
-    <div class="page flex justify-start w-full h-screen  flex-col overflow-hidden">
+    <div class="page flex justify-start w-full md:h-screen h-fit flex-col overflow-hidden">
       <Header @card-select="onCardSelect"/>
       <MainComponent :card-index="cardIndex"/>
       <Footer/>

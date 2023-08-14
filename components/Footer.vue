@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-  <div class="w-full h-full  p-4 md:h-[13vh]  relative overflow-hidden footer z-10  ">
+  <div class="w-full h-full  p-4 md:h-[13vh]  relative overflow-hidden footer z-10  flex">
    
     <div class="w-full  flex text-black  shadow_xl flex md:justify-around flex-col md:flex-row md:items-center justify-start leading-[100%]  grow-0">
       <div class="flex w-full text-[max(1.7vw,1.1rem)] gap-2 items-center  justify-center">
