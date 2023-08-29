@@ -1,63 +1,40 @@
 <script setup >
-import { reactive, onMounted, ref, onBeforeUnmount } from 'vue'
-const scroll = reactive({
-    scrollPosition: 0
-})
-const main = ref(null)
-const handleScroll = () => {
-    if (process.client) {
-        scroll.scrollPosition = window.scrollY
-    }
-}
-onMounted(() => {
-    if (process.client) {
-        window.addEventListener("scroll", handleScroll);
-      
-    }
-})
-onBeforeUnmount(() => {
-    if (process.client) {
-        window.removeEventListener("scroll", handleScroll);
-      
-    }
-})
-const text = ['В Порту-Кавказ и в акватории Чёрного моря Компания оказывает такие услуги как рейдовая перевалка навалочных грузов.В номенклатуру обрабатываемых грузов входят уголь, ячмень, зерно, железорудные концентраты, удобрения, окатыш.Весь комплекс услуг компания оказывает по единой комплексной ставке которая включает перевалку, экспедирование, агентирование и т.д.',
-'Наши клиенты, это производители и экспортёры сырья, трейдеры сельскохозяйственной продукции, импортеры, энергетические компании и другие индустриальные конечные пользователи. Грузовладельцам и фрахтователям мы обеспечиваем надежное обслуживание и гибкость.',
-' Специалисты имеют большой стаж работы в морской индустрии. Они имеют превосходную репутацию, они объединилсиь в надежную, сильную и профессиональную команду, чтобы оказать для наших заказчиков безопасные и высококачественные услуги в областях, где это интересно клиентам.',
-' Водная логистика Морской накопитель, емкостью 33000 тонн. Номинальная мощность перевалки 15000 тн/сутки. Организация сюрвейерского сопровождения. Догрузка флота, загруженного частично на другом терминале. Перевозка зерна на судах является оптимальным решением, когда речь идет о перемещении большого объема грузов на дальние расстояния'
+const props = defineProps({cardIndex:{type:Number}})
+const text = ['Компания оказывает комплексные услуги по перевалке навалочных и насыпных грузов на рейдовом перегрузочном районе морского порта Кавказ по прямому варианту "борт-борт" с накоплением или без накопления груза, в том числе транспортно-экспедиционное обслуживание и агентирование судов. В номенклатуру обрабатываемых грузов входят зерновые грузы, уголь, железорудные концентраты, удобрения, окатыш.',
+'Рейдовый перегрузочный район морского порта Кавказ позволяет обрабатывать морские суда дедвейтом до 100 000 тонн. Доставка груза осуществляется из мелководных портов России судами класса "река-море" дедвейтом от 3000 до 7000 тонн в каботажном плавании. Накопление груза осуществляется на балкере-накопителе дедвейтом 38264 тонны. Перевалка груза выполняется двумя кранами LIEBHERR FCC-CBG 25(30).Номинальная мощность перевалки до 15000 тонн/сутки.Компания владеет собственным флотом для осуществления каботажных перевозок.',
+'Специалисты компании имеют большой стаж работы в морской индустрии и превосходную репутацию. Мы объединились в надежную, сильную и профессиональную команду, чтобы оказать нашим заказчикам безопасные и высококачественные услуги.',
+'Наши клиенты - производители и экспортёры сырья, трейдеры сельскохозяйственной продукции, импортеры, энергетические компании и другие конечные пользователи. Грузовладельцам и фрахтователям мы обеспечиваем надежное обслуживание и гибкость.'
 ]
-const period =[250,550,950, 1250]
 const img = Object.values(import.meta.glob('~/assets/image/*', {
   eager: true,
   import: 'default',
 }))
-const items ={text,img,period}
+
+
 </script>
 <template>
-    <div ref="main" class="min-h-[250vh]  w-full justify-center items-center h-full flex py-[5rem] flex-col relative">
-        <div class="video-bg shadow-xl max-w-[100%] min-h-[200vh]">
-            <video width="auto" height="800" preload="auto" src="~assets/video-1.mp4" type="video/mp4" autoplay muted
+    <div ref="main" class="h-full md:min-h-[60vh] min-h-[75vh]   justify-center items-center  flex md:py-[1rem] py-[2rem] flex-col relative w-screen ">
+        <div class="video-bg shadow-xl w-screen h-screen">
+            <video width="auto"  preload="auto" src="~assets/video-1.mp4" type="video/mp4" autoplay muted
                 loop></video>
             <div class="effects"></div>
             <div class="video-bg__content ">
 
             </div>
         </div>
-        <div class="md:w-[50%] w-[96%] flex flex-col gap-4 justify-center items-center fixed top-[10%]">
+        <div class="md:w-[45%] w-[96%] flex flex-col gap-4 justify-center items-center max-h-full">
 
-            
-            <CardComponent v-for="value,index in items.text"  v-show="scroll.scrollPosition > items.period[index] && scroll.scrollPosition < (items.period[index+1]||1750)" :text="value" :imagePath="items.img[index]" :key="index"/>
-            <!-- <CardComponent v-show="scroll.scrollPosition > 550&& scroll.scrollPosition < 950" :text="textForCardsList[1]" />
-            <CardComponent v-show="scroll.scrollPosition > 950&& scroll.scrollPosition < 1250" :text="textForCardsList[2]" />
-            <CardComponent v-show="scroll.scrollPosition > 1250" :text="textForCardsList[3]" /> -->
+          
+            <CardComponent  v-if="props.cardIndex||props.cardIndex==0" :text="text[cardIndex]" :imagePath="img[cardIndex]" />
+        
            
         </div>
     </div>
 </template>
 <style scoped>
 .video-bg {
-    min-height: 100%;
-    width: 100%;
+    /* min-height: 100%;
+    width: 100%; */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -75,11 +52,9 @@ const items ={text,img,period}
     top: 0;
     left: 0;
     z-index: 1;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-
-    transition: 1s opacity;
 }
 
 .effects {
@@ -93,20 +68,6 @@ const items ={text,img,period}
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.video-bg__content {
-    z-index: 2;
-    color: #ffffff;
-    font-size: 1.7rem;
-    padding: 1rem;
-    height: 100%;
-    text-align: left;
-    transition: 0.3s;
-    opacity: 0;
-    cursor: pointer;
-}
 
-.video-bg__content:hover {
-    opacity: 0.9;
 
-}
 </style>
