@@ -39,7 +39,7 @@
 }
 .shadow_xl{
   font-family: Oswald;
-  filter: drop-shadow(-5px 6px 5px #db8310);
+  filter: drop-shadow(-5px 6px 5px #f7b867);
 }
 
 .footer{

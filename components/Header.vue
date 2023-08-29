@@ -52,20 +52,20 @@ const handleClick = (linkName) => {
   font-family: Finlandica;
   font-weight: 700;
   font-size: max(2.2vw, 1.5rem);
-  filter: drop-shadow(-5px 6px 5px #000);
+  filter: drop-shadow(-5px 6px 5px #333232);
   line-height: 100%;
 
 }
 
 .title_sm {
   font-size: max(1.8vw, 1.1rem);
-  filter: drop-shadow(-5px 6px 5px #000);
+  filter: drop-shadow(-5px 6px 5px #5f5959);
 }
 
 .title_sm_sm {
   font-size: max(1.3vw, 0.8rem);
   transition: 0.1s;
-  filter: drop-shadow(-1px 2px 1px #131212);
+  filter: drop-shadow(-1px 2px 1px #383535);
   user-select: none;
 }
 
