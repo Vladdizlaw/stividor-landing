@@ -43,7 +43,7 @@
 }
 
 .footer{
-	background: rgba( 60, 170, 182, 0.25 );
+	background: rgba(215, 239, 241, 0.25);
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 8.5px );
 -webkit-backdrop-filter: blur( 8.5px );
