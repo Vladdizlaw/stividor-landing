@@ -22,7 +22,7 @@ const img = Object.values(import.meta.glob('~/assets/image/*', {
 
             </div>
         </div>
-        <div class="md:w-[45%] w-[96%] flex flex-col gap-4 justify-center items-center max-h-full">
+        <div class="md:w-[50%] min-h-fit w-[90%] flex flex-col gap-4 justify-center items-center md:h-[90%] mt-[1rem] md:mt-0">
 
           
             <CardComponent  v-if="props.cardIndex||props.cardIndex==0" :text="text[cardIndex]" :imagePath="img[cardIndex]" />
@@ -65,7 +65,7 @@ const img = Object.values(import.meta.glob('~/assets/image/*', {
     z-index: 2;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(7, 7, 7, 0.3);
 }
 
 
