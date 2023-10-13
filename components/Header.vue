@@ -1,13 +1,13 @@
 <script setup>
-import { ref,onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 const emit = defineEmits(['card-select'])
 const cardIndex = ref(null)
-const cardValues=['Услуги','Логистика','Наши возможности','Наши клиенты']
+const cardValues = ['Услуги', 'Логистика', 'Наши возможности', 'Наши клиенты']
 const handleClick = (linkName) => {
-  cardIndex.value = linkName
+  cardIndex.value == linkName ? cardIndex.value = null : cardIndex.value = linkName
   emit('card-select', linkName)
 }
-onMounted ( () => {
+onMounted(() => {
   // emit('card-select', cardIndex.value)
 })
 </script>
@@ -22,17 +22,18 @@ onMounted ( () => {
       <div class=" w-fit place-self-start place-items-center md:mt-6">
 
         <h1 class="title  text-[#ce8421] ">
-        
+
           ЧЕРНОМОРСКАЯ СТИВИДОРНАЯ КОМПАНИЯ
         </h1>
-        <h2 class="title_sm text-xl text-[#d6b659] drop-shadow-xl">
+        <h2 class="title_sm md:pl-10 text-xl text-[#d6b659] drop-shadow-xl">
           Рейдовая перевалка грузов
         </h2>
       </div>
     </div>
     <div
       class="w-full  md:justify-center md:gap-20  justify-around sm:gap-6 text-[#ce8421] flex absolute md:bottom-2 bottom-[-2rem] z-[100]">
-      <p v-for="card,index in cardValues" :key="index"  @click="handleClick(index)" class="cursor-pointer title_sm_sm " :class="{ 'active': cardIndex == index }">{{card}}</p>
+      <p v-for="card, index in cardValues" :key="index" @click="handleClick(index)" class="cursor-pointer title_sm_sm "
+        :class="{ 'active': cardIndex == index }">{{ card }}</p>
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ onMounted ( () => {
 }
 
 .header {
-  background: rgba(192, 244, 251, 0.25);
+  background: rgba(14, 108, 223, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
@@ -53,7 +54,7 @@ onMounted ( () => {
 }
 
 .active {
-  color:rgb(248, 211, 29);
+  color: rgb(248, 211, 29);
   filter: drop-shadow(-10px 6px 4px #000);
 }
 
@@ -84,5 +85,6 @@ onMounted ( () => {
 }
 
 .title_sm_sm:active {
-  transform: scale(0.9);
-}</style>
+  transform: scale(0.96);
+}
+</style>
